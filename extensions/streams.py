@@ -90,7 +90,7 @@ class Streams(commands.Cog):
             self.game_cache = stream.game
             await ping_channel.send(livestatement)
         
-        elif stream is None and self.is_live is not None:
+        elif stream is None and self.is_live is True:
             self.is_live = False
             endstatement = f"{channel}'s stream has now ended, thank you all so much for watching! :purple_heart:"
             await ping_channel.send(endstatement)
