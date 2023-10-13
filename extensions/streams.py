@@ -7,7 +7,7 @@ from typing import Literal, Optional
 
 import discord
 from discord.ext import commands, tasks
-
+from config import client_id, client_secret, grant_type
 
 class Stream:
     def __init__(self, title, streamer, game, stream_url):
@@ -18,9 +18,9 @@ class Stream:
 
 async def getOAuthToken():
     params = {
-        'client_id': "trbgvg3l30bsinc3glldwyafbe2jwc",
-        'client_secret': "5hk8z0jlwwv476t447vtaz3kjppvul",
-        'grant_type': 'client_credentials'
+        'client_id': client_id,
+        'client_secret': client_secret,
+        'grant_type': grant_type
     }
 
     async with aiohttp.ClientSession() as session:
