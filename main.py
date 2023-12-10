@@ -7,11 +7,11 @@ from typing import Literal, Optional
 import discord
 from discord.ext import commands
 
-from config import token
+from config import token, test_token
 
 TESTING = sys.platform == "darwin"
-TOKEN = token
-PREFIX = "!"
+TOKEN = token if not TESTING else test_token
+PREFIX = "!" if not TESTING else "t!"
 
 
 bot = commands.Bot(
